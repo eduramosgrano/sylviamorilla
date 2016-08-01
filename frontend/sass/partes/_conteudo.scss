@@ -1,0 +1,298 @@
+@import "../bootstrap-variables" ;
+
+// COnteudo
+.conteudo{
+  padding-top: 200px;
+}
+// Publico
+.publico{
+  // position: relative;
+  .row{
+    width: 100%;
+
+  }
+  .foto{
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    overflow: hidden;
+    .img{
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: 110%;
+      background-position: center;
+      @include opacity(0);
+      &.active{
+        @include opacity(1);
+      }
+      &:before{
+        background-color: $body-bg;
+        @include opacity(0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: '';
+      }
+
+    }
+    & > div {
+      height: 472px;
+      //background-color: $gray-base;
+      //margin-top: 200px;
+
+    }
+
+    span{
+      &.top{
+          border-top: 1px solid $gray-base;
+          width: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.bottom{
+          border-top: 1px solid $gray-base;
+          width: 100%;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.right{
+          border-right: 1px solid $gray-base;
+          height: 100%;
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.left{
+        border-right: 1px solid $gray-base;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 2;
+        @include opacity(0.3);
+      }
+    }
+
+
+
+  }
+  .chamada1{
+    top: 280px;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    height: 120px;
+    .col {
+      height: 120px;
+    }
+    span{
+      display: block;
+      height: 0;
+      border-left: 1px solid $gray-base;
+      left: 0;
+      position: absolute;
+      transform:skewX(170deg);
+      @include opacity(0.3);
+
+      &:before{
+        margin-left: -349px;
+        width: 348px;
+        top: 50%;
+        content: '';
+        display: block;
+        position: absolute;
+        border-top: 1px solid $gray-base;
+      }
+    }
+    h1{
+      position: absolute;
+    &.i1, &.i2, &.i3 {
+        @include opacity(0);
+        margin-left: 0;
+      }
+      &.active {
+          @include opacity(1);
+          margin-left: 20px;
+        }
+    }
+
+  }
+}
+
+// Serviços
+.servicos{
+  margin-top: 100px;
+  height: 500px;
+  padding-left: 25px;
+  padding-right: 25px;
+  .foto{
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    div {
+      background-size: cover;
+      background-position: center;
+      &:before{
+        background-color: $body-bg;
+        @include opacity(0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: '';
+      }
+    }
+
+    span{
+      &.top{
+          border-top: 1px solid $gray-base;
+          width: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.bottom{
+          border-top: 1px solid $gray-base;
+          width: 100%;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.right{
+          border-right: 1px solid $gray-base;
+          height: 100%;
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 100%;
+          z-index: 2;
+          @include opacity(0.3);
+      }
+      &.left{
+        border-right: 1px solid $gray-base;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 2;
+        @include opacity(0.3);
+      }
+    }
+
+    .img1,.img2,.img3{
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      background-size: 110%;
+      background-position: center;
+
+      @include opacity(0);
+    }
+    .img1{
+        // background-color: $brand-success;
+    }
+    .img2{
+        // background-color: $brand-warning;
+    }
+    .img3{
+        // background-color: $brand-danger;
+    }
+
+  }
+
+  .chamada{
+    position: absolute;
+    z-index: 3;
+    bottom: 200px;
+    text-align: center;
+    width: 100%;
+    @include text-shadow(0 0 40px white);
+    .frase1,.frase2,.frase3{
+      position: absolute;
+      bottom: -60px;
+      z-index: 3;
+      width: 100%;
+      @include opacity(0);
+      @include text-shadow(0 0 40px white);
+    }
+  }
+}
+
+
+// Sobre
+
+.sobre{
+  margin-top: 200px;
+  .logo{
+    margin-bottom: 30px;
+    #ass-mask {
+      width: 350px;
+      position: absolute;
+      left: 14px;
+      top: -1px;
+      .cls-1{
+        stroke: $body-bg;
+        fill: none;
+        stroke-linejoin: bevel;
+        stroke-width: 12px;
+      }
+      #io{
+        @include opacity(1);
+      }
+      #io2{
+        @include opacity(1);
+      }
+    }
+    #ass .ass{
+      fill: $gray-base;
+    }
+    .nome{
+      width: 350px;
+    }
+  }
+  .foto{
+    background: $gray-base;
+    @include opacity(0);
+    height: 500px;
+  }
+  p{
+    @include opacity(0);
+  }
+
+  .btn{
+    margin-top: 20px;
+  }
+}
+
+
+
+// END Sobre
