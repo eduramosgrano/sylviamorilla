@@ -17,55 +17,12 @@ $(document).ready(function(){
       }
   });
 
-  // function AniNavConteudo() {
-  //
-  //     if (aniOn == false) {
-  //       aniOn = true;
-  //       navConteudo.animate({
-  //           'display' : "block"
-  //       },500 ,
-  //         function(){
-  //           $(this).css({opacity:1});
-  //           aniOn = false;
-  //         }
-  //       );
-  //     }
-  //
-  // };
-  //
-  //
-  // $(window).on('scroll', function(){
-  //     if(!menuBtn.hasClass("is-top")){
-  //
-  //       var    navegatorDynPos = navegatorTopPos-$(this).scrollTop();
-  //
-  //
-  //
-  //
-  //     	if(navegatorDynPos < navegatorTopPos ) {
-  //           // console.log(navConteudo);
-  //     		navegator.addClass('is-top');
-  //         AniNavConteudo();
-  //     		setTimeout(function() {
-  //                 navegator.addClass('animate-children');
-  //
-  //
-  //         }, 500);
-  //     	} else {
-  //     		navegator.removeClass('is-top');
-  //         // navConteudo.removeClass('is-active');
-  //     		setTimeout(function() {
-  //                 navegator.removeClass('animate-children');
-  //         }, 500);
-  //     	}
-  //     }
-  // })
   var ctrlMenu = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "0"}});
 
   var tlMenu = new TimelineMax({ease:Power1.easeInOut});
       tlMenu
             .to(".navegator", 1, {width:windowWidth})
-            .to(".navegator .social", 0.5, {"display":"block"})
+            .to(".navegator .social",0.5, {className:"+=is-top"})
             .to(".navegator .social", 0.5, {opacity:1});
 
   var tlMenuAtivo = new TimelineMax({ease:Power1.easeInOut});
@@ -198,13 +155,13 @@ $(document).ready(function(){
                 .to(".foto .img.img1", 1, {ease:Power2.easeInOut, opacity:1})
                 .to(".publico .foto .img1", 10, {"background-size":"100%"})
                 .to(".foto .img.img1",1, {ease:Power2.easeInOut, opacity:0})
-                .to(".chamada1", 1, {ease:Power1.easeOut, y:"-200px"})
+                .to(".chamada1", 1, {ease:Power1.easeOut, y:"8%"})
                 .to(".chamada1 h1.i1",1, { ease:Power2.easeInOut, opacity:0, x:0})
                 .to(".chamada1 h1.i2",1, { ease:Power2.easeInOut, opacity:1, x:10})
                 .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:1})
                 .to(".publico .foto .img2", 10, {"background-size":"100%"})
                 .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:0})
-                .to(".chamada1", 1, {ease:Power2.easeInOut, y:"-150px"})
+                .to(".chamada1", 1, {ease:Power2.easeInOut, y:"15%"})
                 .to(".chamada1 h1.i2",1, {ease:Power2.easeInOut, opacity:0, x:0})
                 .to(".chamada1 h1.i3",1, {ease:Power2.easeInOut, opacity:1, x:10})
                 .to(".foto .img.img3",1, {ease:Power2.easeInOut, opacity:1})
@@ -236,7 +193,7 @@ $(document).ready(function(){
                 .to(".servicos .foto span.right ", 1, {bottom:0})
                 .to(".servicos .chamada .frase1", 0.5, {opacity:1,y:10})
                 .to(".servicos .foto .img1", 1, {opacity:1},"+=5")
-                .to(".servicos .foto .img1", 10, {"background-size":"100%"})
+                .to(".servicos .foto .img1", 10, {"background-size":"100% "})
                 .to(".servicos .chamada .frase1", 0.5, {opacity:0})
                 .to(".servicos .foto .img1", 1, {opacity:0})
                 .to(".servicos .chamada .frase2", 0.5, {opacity:1,y:10})

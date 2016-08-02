@@ -8,8 +8,12 @@
 .publico{
   // position: relative;
   .row{
-    width: 100%;
 
+
+    /* Small devices (desktops, 992px and up) */
+     @media (min-width: $screen-md-min) {
+       width: 100%;
+     }
   }
   .foto{
     position: relative;
@@ -94,11 +98,19 @@
 
   }
   .chamada1{
-    top: 280px;
+    //top: 280px;
     position: absolute;
     z-index: 3;
-    text-align: center;
+    text-align: left;
     height: 120px;
+    top: 20%;
+
+    /* Small devices (tablets, 768px and up) */
+     @media (min-width: $screen-sm-min) {
+        top: 280px;
+        text-align: left;
+     }
+
     .col {
       height: 120px;
     }
@@ -140,8 +152,15 @@
 .servicos{
   margin-top: 100px;
   height: 500px;
-  padding-left: 25px;
-  padding-right: 25px;
+  //padding-left: 25px;
+  //padding-right: 25px;
+
+  /* Small devices (tablets, 768px and up) */
+   @media (min-width: $screen-sm-min) {
+     padding-left: 25px;
+     padding-right: 25px;
+   }
+
   .foto{
     height: 100%;
     overflow: hidden;
@@ -232,13 +251,20 @@
   .chamada{
     position: absolute;
     z-index: 3;
-    bottom: 200px;
+    bottom: 280px;
     text-align: center;
     width: 100%;
+    left: 0;
     @include text-shadow(0 0 40px white);
+
+    /* Small devices (tablets, 768px and up) */
+     @media (min-width: $screen-sm-min) {
+        bottom: 200px;
+     }
+
     .frase1,.frase2,.frase3{
       position: absolute;
-      bottom: -60px;
+      bottom: -95px;
       z-index: 3;
       width: 100%;
       @include opacity(0);
@@ -253,12 +279,34 @@
 .sobre{
   margin-top: 200px;
   .logo{
+    width: 100%;
     margin-bottom: 30px;
-    #ass-mask {
-      width: 350px;
+
+    /* Small devices (tablets, 768px and up) */
+     @media (min-width: $screen-sm-min) {
+        width: auto;
+     }
+
+    .mask{
       position: absolute;
-      left: 14px;
+      left: -1px;
       top: -1px;
+       width: 100%;
+       padding-left: 15px;
+       padding-right: 15px;
+      /* Small devices (tablets, 768px and up) */
+       @media (min-width: $screen-sm-min) {
+          width: 380px;
+       }
+    }
+    #ass-mask {
+      width: 100%;
+
+
+      /* Small devices (tablets, 768px and up) */
+       @media (min-width: $screen-sm-min) {
+
+       }
       .cls-1{
         stroke: $body-bg;
         fill: none;
@@ -276,7 +324,11 @@
       fill: $gray-base;
     }
     .nome{
-      width: 350px;
+      width: 100%;
+      /* Small devices (tablets, 768px and up) */
+       @media (min-width: $screen-sm-min) {
+          width: 350px;
+       }
     }
   }
   .foto{
@@ -286,6 +338,9 @@
   }
   p{
     @include opacity(0);
+  }
+  .texto{
+    margin-bottom: 60px;
   }
 
   .btn{
