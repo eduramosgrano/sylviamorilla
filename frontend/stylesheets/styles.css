@@ -9083,89 +9083,94 @@ button.close {
 /* line 279, ../sass/partes/_conteudo.scss */
 .sobre {
   margin-top: 200px;
+  margin-bottom: 0 !important;
 }
-/* line 281, ../sass/partes/_conteudo.scss */
+/* line 282, ../sass/partes/_conteudo.scss */
 .sobre .logo {
   width: 100%;
   margin-bottom: 30px;
   /* Small devices (tablets, 768px and up) */
 }
 @media (min-width: 768px) {
-  /* line 281, ../sass/partes/_conteudo.scss */
+  /* line 282, ../sass/partes/_conteudo.scss */
   .sobre .logo {
     width: auto;
   }
 }
-/* line 290, ../sass/partes/_conteudo.scss */
+/* line 291, ../sass/partes/_conteudo.scss */
 .sobre .logo .mask {
   position: absolute;
-  left: -1px;
-  top: -1px;
+  left: 3px;
+  top: 19px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   /* Small devices (tablets, 768px and up) */
 }
 @media (min-width: 768px) {
-  /* line 290, ../sass/partes/_conteudo.scss */
+  /* line 291, ../sass/partes/_conteudo.scss */
   .sobre .logo .mask {
     width: 380px;
   }
 }
-/* line 302, ../sass/partes/_conteudo.scss */
+/* line 303, ../sass/partes/_conteudo.scss */
 .sobre .logo #ass-mask {
   width: 100%;
   /* Small devices (tablets, 768px and up) */
 }
-/* line 310, ../sass/partes/_conteudo.scss */
+/* line 311, ../sass/partes/_conteudo.scss */
 .sobre .logo #ass-mask .cls-1 {
   stroke: #f1f1f2;
   fill: none;
   stroke-linejoin: bevel;
   stroke-width: 12px;
 }
-/* line 316, ../sass/partes/_conteudo.scss */
+/* line 317, ../sass/partes/_conteudo.scss */
 .sobre .logo #ass-mask #io {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 319, ../sass/partes/_conteudo.scss */
+/* line 320, ../sass/partes/_conteudo.scss */
 .sobre .logo #ass-mask #io2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 323, ../sass/partes/_conteudo.scss */
+/* line 324, ../sass/partes/_conteudo.scss */
 .sobre .logo #ass .ass {
   fill: #391c07;
 }
-/* line 326, ../sass/partes/_conteudo.scss */
+/* line 327, ../sass/partes/_conteudo.scss */
 .sobre .logo .nome {
   width: 100%;
   /* Small devices (tablets, 768px and up) */
 }
 @media (min-width: 768px) {
-  /* line 326, ../sass/partes/_conteudo.scss */
+  /* line 327, ../sass/partes/_conteudo.scss */
   .sobre .logo .nome {
     width: 350px;
   }
 }
-/* line 334, ../sass/partes/_conteudo.scss */
+/* line 335, ../sass/partes/_conteudo.scss */
 .sobre .foto {
-  background: #391c07;
+  background-image: url("../images/sylvia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   height: 500px;
+  text-indent: -999999px;
 }
-/* line 339, ../sass/partes/_conteudo.scss */
+/* line 344, ../sass/partes/_conteudo.scss */
 .sobre p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 342, ../sass/partes/_conteudo.scss */
+/* line 347, ../sass/partes/_conteudo.scss */
 .sobre .texto {
-  margin-bottom: 60px;
+  border: none !important;
 }
-/* line 346, ../sass/partes/_conteudo.scss */
+/* line 352, ../sass/partes/_conteudo.scss */
 .sobre .btn {
   margin-top: 20px;
 }
@@ -9985,4 +9990,157 @@ input, textarea {
   width: 100%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
+}
+
+/* line 3, ../sass/partes/_portfolio.scss */
+.navegator.inner {
+  top: 0;
+  width: 100%;
+}
+/* line 6, ../sass/partes/_portfolio.scss */
+.navegator.inner .logo {
+  margin-left: 0;
+}
+/* line 9, ../sass/partes/_portfolio.scss */
+.navegator.inner .social {
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/* line 16, ../sass/partes/_portfolio.scss */
+.slider-portfolio {
+  height: 100vh;
+  padding-top: 116px;
+  width: 100%;
+}
+/* line 20, ../sass/partes/_portfolio.scss */
+.slider-portfolio .row {
+  height: 100%;
+}
+/* line 23, ../sass/partes/_portfolio.scss */
+.slider-portfolio .carousel {
+  height: 100%;
+  position: relative;
+  bottom: 0;
+}
+/* line 28, ../sass/partes/_portfolio.scss */
+.slider-portfolio .carousel .owl-stage-outer, .slider-portfolio .carousel .owl-stage, .slider-portfolio .carousel .owl-item, .slider-portfolio .carousel .item {
+  height: 100%;
+}
+/* line 31, ../sass/partes/_portfolio.scss */
+.slider-portfolio .carousel .item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 37, ../sass/partes/_portfolio.scss */
+.slider-portfolio .seta {
+  display: none;
+}
+/* line 38, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  min-height: 198px;
+  z-index: 9;
+}
+/* line 45, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .content {
+  padding: 20px;
+  padding-right: 10px;
+}
+/* line 48, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .content .box {
+  position: relative;
+  min-height: 158px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* line 55, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .setas {
+  padding: 10px 0;
+}
+/* line 57, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .setas .left, .slider-portfolio .chamada .setas .right {
+  padding: 10px;
+}
+/* line 59, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .setas .left .icon, .slider-portfolio .chamada .setas .right .icon {
+  position: relative;
+  min-height: 158px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 28px;
+  text-align: center;
+}
+/* line 66, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .setas .left .icon svg, .slider-portfolio .chamada .setas .right .icon svg {
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  fill: #391c07;
+  -moz-transition-property: fill;
+  -o-transition-property: fill;
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+/* line 75, ../sass/partes/_portfolio.scss */
+.slider-portfolio .chamada .setas .left .icon:hover svg, .slider-portfolio .chamada .setas .right .icon:hover svg {
+  fill: white;
+}
+
+/* line 98, ../sass/partes/_portfolio.scss */
+.conteudo {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/* line 101, ../sass/partes/_portfolio.scss */
+.conteudo .row {
+  margin-bottom: 60px;
+}
+/* line 104, ../sass/partes/_portfolio.scss */
+.conteudo .texto {
+  border: 1px solid #391c07;
+  padding: 20px;
+}
+/* line 107, ../sass/partes/_portfolio.scss */
+.conteudo .texto h1 {
+  margin-top: 0;
+}
+/* line 110, ../sass/partes/_portfolio.scss */
+.conteudo .texto .btn {
+  padding: 0 13px !important;
+  float: right;
+  height: 52px;
+  font-size: 26px !important;
+}
+/* line 118, ../sass/partes/_portfolio.scss */
+.conteudo .img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 203px;
+}
+
+/* line 126, ../sass/partes/_portfolio.scss */
+.contato h1 {
+  opacity: 1;
+}
+/* line 129, ../sass/partes/_portfolio.scss */
+.contato p {
+  opacity: 1;
+}
+/* line 132, ../sass/partes/_portfolio.scss */
+.contato input, .contato textarea {
+  opacity: 1 !important;
+}
+/* line 135, ../sass/partes/_portfolio.scss */
+.contato .btn {
+  opacity: 1;
 }

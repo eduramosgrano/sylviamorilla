@@ -67,7 +67,7 @@ $(document).ready(function(){
     } else {
       // desativar menu
       if(!navegator.hasClass("is-top")){
-          console.log("fechou!");
+          //console.log("fechou!");
           tlMenu.reverse(-1);
           navegator.parent().css("top",navegatorTopPos);
         }
