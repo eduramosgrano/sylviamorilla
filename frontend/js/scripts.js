@@ -15,6 +15,9 @@ $(document).ready(function(){
       if(navegator.hasClass("is-top")){
         navegator.css({width:windowWidth});
       }
+      if($( window ).width() <= 767){
+        navegator.parent().css("top",0);
+      }
   });
 
   var ctrlMenu = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "0"}});
