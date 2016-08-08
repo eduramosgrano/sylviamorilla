@@ -1,0 +1,138 @@
+@import "../bootstrap-variables" ;
+
+.navegator.inner{
+  top:0;
+  width: 100%;
+  .logo{
+    margin-left: 0;
+  }
+  .social{
+    display: block;
+    @include opacity(1);
+  }
+}
+
+
+.slider-portfolio{
+  height: 100vh;
+  padding-top: 116px;
+  width: 100%;
+  .row{
+    height: 100%;
+  }
+  .carousel{
+    // background-color: black;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    .owl-stage-outer,.owl-stage,.owl-item,.item{
+      height: 100%;
+    }
+    .item{
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  .seta{display: none;}
+  .chamada{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    min-height: 198px;
+    z-index: 9;
+    .content{
+      padding: 20px;
+      padding-right: 10px;
+      .box{
+        position: relative;
+        min-height: 198px-40px;
+        padding: 20px;
+        background-color: rgba(255,255,255,0.5);
+      }
+    }
+    .setas{
+      padding: 10px 0;
+      .left,.right{
+        padding: 10px;
+        .icon{
+          position: relative;
+          min-height: 198px-40px;
+          background-color: rgba(255,255,255,0.5);
+          padding: 28px;
+          text-align: center;
+
+          svg{
+            height: 50%;
+            width: 50%;
+            margin: 0 auto;
+            fill: $gray-base;
+            @include transition-property(fill);
+            @include transition-duration(1s);
+          }
+          &:hover{
+            svg{
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+    // .content .box,.setas .left .icon,.setas .right .icon{
+    //   &:before{
+    //     content: '';
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     margin: 5px;
+    //     border: 1px solid $gray-base;
+    //   }
+    // }
+  }
+
+}
+.conteudo{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .row{
+    margin-bottom: 60px;
+  }
+  .texto{
+    border: 1px solid $gray-base;
+    padding: 20px;
+    h1{
+      margin-top: 0;
+    }
+    .btn{
+      padding: 0 13px !important;
+      float: right;
+      height: 52px;
+      font-size: 26px !important;
+
+    }
+  }
+  .img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 203px;
+  }
+}
+.contato{
+  h1{
+    opacity: 1;
+  }
+  p{
+    opacity: 1;
+  }
+  input,textarea{
+    opacity: 1 !important;
+  }
+  .btn{
+    opacity: 1;
+  }
+}
