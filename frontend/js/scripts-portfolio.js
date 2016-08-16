@@ -8,7 +8,8 @@ $(document).ready(function(){
       conteudoTopPos  = conteudo.offset().top,
       menuBtn         = $('.menu-btn'),
       aniOn           = false,
-      windowWidth     = $( window ).width();
+      windowWidth     = $( window ).width(),
+      sliderContant   = $('.content');
 
   $( window ).resize(function() {
       windowWidth     = $( window ).width();
@@ -87,7 +88,11 @@ $(document).ready(function(){
     animateIn: 'fadeIn'
     //autoplayHoverPause:true
   })
-  
+
+  //Hide content
+
+  setInterval(function(){ sliderContant.addClass('downslide'); }, 3000);
+
 
 
 

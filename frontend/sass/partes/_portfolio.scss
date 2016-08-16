@@ -3,6 +3,7 @@
 .navegator.inner{
   top:0;
   width: 100%;
+  position: fixed;
   .logo{
     margin-left: 0;
   }
@@ -45,11 +46,27 @@
     .content{
       padding: 20px;
       padding-right: 10px;
+      opacity: 1;
+      -webkit-opacity: 1;
+      @include transition-property(opacity);
+      @include transition-duration(2s);
+      &.downslide{
+        opacity: 0;
+        -webkit-opacity: 0;
+        /* Small devices (tablets, 768px and up) */
+         @media (min-width: $screen-sm-min) {
+           opacity: 1;
+           -webkit-opacity: 1;
+         }
+      }
       .box{
         position: relative;
         min-height: 198px-40px;
         padding: 20px;
         background-color: rgba(255,255,255,0.5);
+        h3{
+          margin-top: 0;
+        }
       }
     }
     .setas{
@@ -59,17 +76,28 @@
         .icon{
           position: relative;
           min-height: 198px-40px;
+          height: 65px;
           background-color: rgba(255,255,255,0.5);
           padding: 28px;
           text-align: center;
+          cursor: pointer;
+          /* Small devices (tablets, 768px and up) */
+           @media (min-width: $screen-sm-min) {
+              min-height: 198px-40px;
+              height: auto;
+           }
 
           svg{
-            height: 50%;
+            height: 100%;
             width: 50%;
             margin: 0 auto;
             fill: $gray-base;
             @include transition-property(fill);
             @include transition-duration(1s);
+            /* Small devices (tablets, 768px and up) */
+             @media (min-width: $screen-sm-min) {
+              height: 50%;
+             }
           }
           &:hover{
             svg{
@@ -104,6 +132,8 @@
   .texto{
     border: 1px solid $gray-base;
     padding: 20px;
+    min-height: 250px;
+    overflow: hidden;
     h1{
       margin-top: 0;
     }
@@ -112,6 +142,9 @@
       float: right;
       height: 52px;
       font-size: 26px !important;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
 
     }
   }
@@ -119,7 +152,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 203px;
+    min-height: 250px;
   }
 }
 .contato{
