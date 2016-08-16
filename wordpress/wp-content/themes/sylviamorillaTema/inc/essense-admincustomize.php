@@ -80,7 +80,7 @@ add_action( 'admin_menu', 'menu_customize', 9999 );
         'personalize',
         'separator1', // First separator
         'edit.php?post_type=bannerprincipal',      // Custom Post Type
-        'edit.php?post_type=clientes',      // Custom Post Type
+        'edit.php?post_type=portfolio',      // Custom Post Type
         'edit.php?post_type=depoimentos',    // Custom Post Type
         'conhecimento-sentimento',
         'separator2', // Second separator

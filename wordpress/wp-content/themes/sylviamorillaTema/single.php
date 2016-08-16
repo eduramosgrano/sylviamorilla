@@ -8,9 +8,15 @@
  */
 
 get_header(); ?>
+<div class="conteudo container blog">
+<!--
+ <div class="blog-header">
+	 <h1 class="blog-title">Blog</h1>
+ </div> -->
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+ <div class="row">
+	 <div class="col-sm-8 blog-main">
+
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
@@ -19,9 +25,9 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'single' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+			// if ( comments_open() || get_comments_number() ) {
+			// 	comments_template();
+			// }
 
 			if ( is_singular( 'attachment' ) ) {
 				// Parent post navigation.
@@ -33,10 +39,10 @@ get_header(); ?>
 				the_post_navigation( array(
 					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
+						'<h3 class="post-title">%title</h3>',
 					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
+						'<h3 class="post-title">%title</h3>',
 				) );
 			}
 
@@ -44,11 +50,17 @@ get_header(); ?>
 		endwhile;
 		?>
 
-	</main><!-- .site-main -->
+		</div>
 
-	<?php get_sidebar( 'content-bottom' ); ?>
 
-</div><!-- .content-area -->
+		<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+
+
 
 <?php get_sidebar(); ?>
+
+</div>
+</div>
+</div>
 <?php get_footer(); ?>

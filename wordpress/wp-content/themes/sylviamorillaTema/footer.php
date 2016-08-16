@@ -10,49 +10,71 @@
  */
 ?>
 
-		</div><!-- .site-content -->
+<div id="contato" class="contato">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Conte sua ideia</h1>
+				<p>
+					ficarei muito feliz em poder ajudar :)
+				</p>
+			</div>
+		</div>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<div class="col-md-12">
+					<input type="text" class="form-control nome" id="inputPassword3" placeholder="Seu nome">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<input type="text" class="form-control email" id="inputPassword3" placeholder="Seu email">
+				</div>
+			</div>
+			<textarea class="form-control col-md-12" rows="3"></textarea>
+				<div class="form-group">
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-info col-md-12" data-nome="enviar"><span></span>enviar<span></span></button>
+					</div>
+				</div>
+		</form>
+	</div>
+</div>
 
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-							'menu_class'     => 'social-links-menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-						) );
-					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+<?php
+	if(is_home()){
+		?>
+		<script src="<?php echo get_template_directory_uri();?>/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/greensock/TweenMax.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+		<script src="<?php echo get_template_directory_uri();?>/js/owl.carousel.min.js"></script>
+		<script src="<?php echo get_template_directory_uri();?>/js/scripts.js"></script>
+		<?php
+	} else{  ?>
+		<script src="<?php echo get_template_directory_uri();?>/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/greensock/TweenMax.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+		<script src="<?php echo get_template_directory_uri();?>/js/owl.carousel.min.js"></script>
+		<script src="<?php echo get_template_directory_uri();?>/js/scripts-portfolio.js"></script>
+		<?php
+	}
+ ?>
 
-			<div class="site-info">
-				<?php
-					/**
-					 * Fires before the twentysixteen footer text for footer customization.
-					 *
-					 * @since Twenty Sixteen 1.0
-					 */
-					do_action( 'twentysixteen_credits' );
-				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
-			</div><!-- .site-info -->
-		</footer><!-- .site-footer -->
-	</div><!-- .site-inner -->
-</div><!-- .site -->
+ <!-- Preloader -->
+ <script type="text/javascript">
+ 	//<![CDATA[
+ 		$(window).load(function() { // makes sure the whole site is loaded
+ 			$('#status').fadeOut(); // will first fade out the loading animation
+ 			$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+ 			$('body').delay(350).css({'overflow':'visible'});
+ 		})
+ 	//]]>
+ </script> 
 
 <?php wp_footer(); ?>
 </body>

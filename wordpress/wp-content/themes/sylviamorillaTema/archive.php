@@ -18,18 +18,19 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+
+ <div class="conteudo container blog">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<div class="blog-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					the_archive_title( '<h1 class="blog-titletitle">', '</h1>' );
+					the_archive_description( '<h1 class="blog-titletitle">', '</h1>' );
 				?>
-			</header><!-- .page-header -->
-
+			</div><!-- .page-header -->
+			<div class="row">
+				<div class="col-sm-8 blog-main">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
@@ -57,9 +58,11 @@ get_header(); ?>
 
 		endif;
 		?>
+	</div>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
-
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
 <?php get_sidebar(); ?>
+</div>
+</div>
+</div>
 <?php get_footer(); ?>

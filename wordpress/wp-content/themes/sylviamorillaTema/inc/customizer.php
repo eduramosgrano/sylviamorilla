@@ -23,170 +23,389 @@ function customizer_essense_home( $wp_customize ) {
 
 	// Section Conteudo Home
 
-	$wp_customize->add_section( 'section_conteudo', array(
-		  'title' => __( 'Conteúdo Página Inicial', 'twentysixteen' ),
-	    'priority' => 1,
-	    'description' => 'Configurações do conteúdo da páginal inicial',
-	    // 'panel' => 'panel_1',
+	$wp_customize->add_section( 'section_titulo', array(
+			'title' => __( 'Texto Inicial', 'twentysixteen' ),
+			'priority' => 1,
+			'description' => 'Configurações do conteúdo da páginal inicial. ',
+			// 'panel' => 'panel_1',
 	) );
 
-	// -- Setting Video Home
-	$wp_customize->add_setting( 'url_video_home', array(
-		'default' => 'http://www.youtube.com.br/exemple',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'esc_url',
-	) );
+	// -- Setting  Titulo Pricipal
 
-	$wp_customize->add_control( 'url_video_home', array(
-	    'type' => 'url',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'url_video_home',
-	    'label' => __( 'URL Video Página Inicial', 'twentysixteen' ),
-	    'description' => __( 'ex.: http://www.youtube.com.br/XXXXXX', 'twentysixteen' ),
-	) );
-
-	// -- Setting Video Home END
-
-	// -- Setting Serviços Titulo
-
-	$wp_customize->add_setting( 'servicos_titulo', array(
-		'default' => 'Serviços: Título',
+	$wp_customize->add_setting( 'titulo', array(
+		'default' => 'Título Principal',
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options',
 		'transport' => 'refresh',
 		//'sanitize_callback' => 'esc_url',
 	) );
 
-	$wp_customize->add_control( 'servicos_titulo', array(
-	    'type' => 'text',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'servicos_titulo',
-	    'label' => __( 'Título em Serviços', 'twentysixteen' ),
-	    'description' => '',
+	$wp_customize->add_control( 'titulo', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_titulo',
+			'settings' => 'titulo',
+			'label' => __( '', 'twentysixteen' ),
+			'description' => 'Caso queira trocar as fotos do banner <br/> <a href="#">Clique Aqui.</a>',
 	) );
 	// -- Setting Serviços Titulo END
 
-	// -- Setting Clientes Titulo
-
-	$wp_customize->add_setting( 'clientes_titulo', array(
-		'default' => 'Clientes: Título',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'clientes_titulo', array(
-	    'type' => 'text',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'clientes_titulo',
-	    'label' => __( 'Título em Clientes', 'twentysixteen' ),
-	    'description' => '',
-	) );
-	// -- Setting Clientes Titulo END
-
-	// -- Setting Quem Somos Titulo
-	$wp_customize->add_setting( 'quemsomos_titulo', array(
-		'default' => 'Titulo',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'quemsomos_titulo', array(
-	    'type' => 'text',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'quemsomos_titulo',
-	    'label' => __( 'Título em Quem Somos', 'twentysixteen' ),
-	    'description' => '',
-	) );
-	// -- Setting Quem Somos Titulo END
-
-	// -- Setting Quem Somos Coluna 1 Titulo
-	$wp_customize->add_setting( 'quemsomos_col1_titulo', array(
-		'default' => 'Quem Somos: Coluna 1',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'quemsomos_col1_titulo', array(
-	    'type' => 'text',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'quemsomos_col1_titulo',
-	    'label' => __( 'Quem Somos: Coluna 1', 'twentysixteen' ),
-	    'description' => '',
-	) );
-	// -- Setting Quem Somos Coluna 1 Titulo END
-
-	// -- Setting Quem Somos Coluna 1 Texto
-	$wp_customize->add_setting( 'quemsomos_col1_texto', array(
-		'default' => 'Quem Somos: Texto',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'quemsomos_col1_texto', array(
-	    'type' => 'textarea',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'quemsomos_col1_texto',
-	    'label' => '',
-	    'description' => '',
-	) );
-	// -- Setting Quem Somos Coluna 1 Texto END
-
-	// -- Setting Quem Somos Coluna 2 Titulo
-	$wp_customize->add_setting( 'quemsomos_col2_titulo', array(
-		'default' => 'Quem Somos: Coluna 2',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'quemsomos_col2_titulo', array(
-	    'type' => 'text',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'quemsomos_col2_titulo',
-	    'label' => __( 'Quem Somos: Coluna 2', 'twentysixteen' ),
-	    'description' => '',
-	) );
-	// -- Setting Quem Somos Coluna 2 Titulo END
-
-	// -- Setting Quem Somos Coluna 2 Texto
-	$wp_customize->add_setting( 'quemsomos_col2_texto', array(
-		'default' => 'Quem Somos: Texto',
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'transport' => 'refresh',
-		//'sanitize_callback' => 'esc_url',
-	) );
-
-	$wp_customize->add_control( 'quemsomos_col2_texto', array(
-	    'type' => 'textarea',
-	    'priority' => 10,
-	    'section' => 'section_conteudo',
-			'settings' => 'quemsomos_col2_texto',
-	    'label' => '',
-	    'description' => '',
-	) );
-	// -- Setting Quem Somos Coluna 1 Texto END
-
 	// Section Conteudo Home END
 
+	// Section Publico Home
+
+	$wp_customize->add_section( 'section_publico', array(
+			'title' => __( 'Público', 'twentysixteen' ),
+			'priority' => 1,
+			'description' => 'Configurações do conteúdo da páginal inicial. ',
+			// 'panel' => 'panel_1',
+	) );
+
+// // ---------------
+// 	$wp_customize->add_setting( 'publico_texto_ini', array(
+// 		'default' => 'Texto Inicial',
+// 		'type' => 'theme_mod',
+// 		'capability' => 'edit_theme_options',
+// 		'transport' => 'refresh',
+// 		//'sanitize_callback' => 'esc_url',
+// 	) );
+//
+// 	$wp_customize->add_control( 'publico_texto_ini', array(
+// 			'type' => 'text',
+// 			'priority' => 10,
+// 			'section' => 'section_publico',
+// 			'settings' => 'publico_texto_ini',
+// 			'label' => __( 'Texto Inicial', 'twentysixteen' ),
+// 			'description' => '',
+// 	) );
+// // ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_texto1', array(
+		'default' => 'Público 1',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'publico_texto1', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_publico',
+			'settings' => 'publico_texto1',
+			'label' => __( 'Texto 1', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_img1', array(
+		'default' => 'Imagem 1',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'publico_img1',
+	           array(
+	               'label'      => __( 'Imagem 1', 'theme_name' ),
+	               'section'    => 'section_publico',
+	               'settings'   => 'publico_img1'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_texto2', array(
+		'default' => 'Público 2',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'publico_texto2', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_publico',
+			'settings' => 'publico_texto2',
+			'label' => __( 'Texto 2', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_img2', array(
+		'default' => 'Imagem 2',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'publico_img2',
+	           array(
+	               'label'      => __( 'Imagem 2', 'theme_name' ),
+	               'section'    => 'section_publico',
+	               'settings'   => 'publico_img2'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_texto3', array(
+		'default' => 'Público 3',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'publico_texto3', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_publico',
+			'settings' => 'publico_texto3',
+			'label' => __( 'Texto 3', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'publico_img3', array(
+		'default' => 'Imagem 3',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'publico_img3',
+	           array(
+	               'label'      => __( 'Imagem 3', 'theme_name' ),
+	               'section'    => 'section_publico',
+	               'settings'   => 'publico_img3'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+	// Section Publico Home END
+
+	// Section Serviços Home
+
+	$wp_customize->add_section( 'section_servicos', array(
+			'title' => __( 'Serviços', 'twentysixteen' ),
+			'priority' => 1,
+			'description' => 'Configurações do conteúdo da páginal inicial. ',
+			// 'panel' => 'panel_1',
+	) );
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_texto_ini', array(
+		'default' => 'Texto Inicial',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'servicos_texto_ini', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_servicos',
+			'settings' => 'servicos_texto_ini',
+			'label' => __( 'Texto Inicial', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_texto1', array(
+		'default' => 'Serviços 1',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'servicos_texto1', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_servicos',
+			'settings' => 'servicos_texto1',
+			'label' => __( 'Texto 1', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_img1', array(
+		'default' => 'Imagem 1',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'servicos_img1',
+	           array(
+	               'label'      => __( 'Imagem 1', 'theme_name' ),
+	               'section'    => 'section_servicos',
+	               'settings'   => 'servicos_img1'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_texto2', array(
+		'default' => 'Serviços 2',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'servicos_texto2', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_servicos',
+			'settings' => 'servicos_texto2',
+			'label' => __( 'Texto 2', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_img2', array(
+		'default' => 'Imagem 2',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'servicos_img2',
+	           array(
+	               'label'      => __( 'Imagem 2', 'theme_name' ),
+	               'section'    => 'section_servicos',
+	               'settings'   => 'servicos_img2'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_texto3', array(
+		'default' => 'Seriviços 3',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'servicos_texto3', array(
+			'type' => 'text',
+			'priority' => 10,
+			'section' => 'section_servicos',
+			'settings' => 'servicos_texto3',
+			'label' => __( 'Texto 3', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'servicos_img3', array(
+		'default' => 'Imagem 3',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'servicos_img3',
+	           array(
+	               'label'      => __( 'Imagem 3', 'theme_name' ),
+	               'section'    => 'section_servicos',
+	               'settings'   => 'servicos_img3'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+	// Section Publico Home END
+
+	// Section Sobre Home
+
+	$wp_customize->add_section( 'section_sobre', array(
+			'title' => __( 'Sobre', 'twentysixteen' ),
+			'priority' => 1,
+			'description' => 'Configurações do conteúdo da páginal inicial. ',
+			// 'panel' => 'panel_1',
+	) );
+
+// ---------------
+	$wp_customize->add_setting( 'sobre_texto', array(
+		'default' => 'Sobre texto',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+
+	$wp_customize->add_control( 'sobre_texto', array(
+			'type' => 'textarea',
+			'priority' => 10,
+			'section' => 'section_sobre',
+			'settings' => 'sobre_texto',
+			'label' => __( 'Texto 1', 'twentysixteen' ),
+			'description' => '',
+	) );
+// ----------------
+
+// ---------------
+	$wp_customize->add_setting( 'sobre_img1', array(
+		'default' => 'Imagem 1',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		//'sanitize_callback' => 'esc_url',
+	) );
+	$wp_customize->add_control(
+	       new WP_Customize_Image_Control(
+	           $wp_customize,
+	           'sobre_img1',
+	           array(
+	               'label'      => __( 'Imagem 1', 'theme_name' ),
+	               'section'    => 'section_sobre',
+	               'settings'   => 'sobre_img1'
+	              //  'context'    => 'your_setting_context'
+	           )
+	       )
+	   );
+// ----------------
+	// Section Publico Home END
 
 	// Panel Contato
 
@@ -223,7 +442,6 @@ function customizer_essense_home( $wp_customize ) {
 	) );
 
 	//-- Setting Email NewsLetter END
-	//-- Section Email NewsLetter END
 
 	//-- Section Endereço
 	$wp_customize->add_section('section_endereco', array(

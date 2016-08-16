@@ -19,10 +19,8 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
 
 // Conteudo
+@import "partes/blog";
 @import "partes/conteudo";
-
-
-
 
 // Principal
 body,html{
@@ -116,7 +114,7 @@ input, textarea{
   position: absolute;
   width: 100%;
   height: $navegator-height;
-  z-index: 9;
+  z-index: 99999999;
   display: block;
   background-color: $body-bg;
   top: 0;

@@ -192,18 +192,23 @@ add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
  * @since Twenty Sixteen 1.0
  */
 
-
-
-
-	//post format scripts
-	function my_enqueue( $hook ) {
-    if (is_admin()){
-		  // wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js');
-    wp_enqueue_script( 'postFormat', get_template_directory_uri() . '/js/essense-postformat.js',  array( 'jquery' ), '20160412', true );
-		}
+ function modify_jquery() {
+	if (!is_admin()) {
+		// comment out the next two lines to load the local copy of jQuery
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', true, '1.8.1');
+		wp_enqueue_script('jquery');
 	}
+}
+add_action('init', 'modify_jquery');
 
-		add_action('admin_enqueue_scripts', 'my_enqueue');
+
+
+
+
+
+
+		// add_action('admin_enqueue_scripts', 'my_enqueue');
 
 function twentysixteen_scripts() {
 
@@ -211,6 +216,30 @@ function twentysixteen_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri() );
+
+	// Theme stylesheet Sylvia Morilla.
+	wp_enqueue_style( 'twentysixteen-sm_styles', get_template_directory_uri() . '/stylesheets/styles.css', array( 'twentysixteen-style' ), '20160412' );
+	wp_enqueue_style( 'twentysixteen-sm_carousel', get_template_directory_uri() . '/stylesheets/owl.carousel.css', array( 'twentysixteen-style' ), '20160412' );
+	wp_enqueue_style( 'twentysixteen-sm_animate', get_template_directory_uri() . '/stylesheets/animate.css', array( 'twentysixteen-style' ), '20160412' );
+
+	// THEME JS Sylvia Morilla
+
+
+//	wp_enqueue_script( 'twentysixteen-sm-bootstrap', get_template_directory_uri() . '/bootstrap.min.js', array(), '20160412', true );
+	// wp_enqueue_script( 'twentysixteen-sm-greensock', get_template_directory_uri() . '/js/greensock/TweenMax.min.js', array('jquery'), '20160412', true );
+	// wp_enqueue_script( 'twentysixteen-sm-scrollmagic', get_template_directory_uri() . '/js/scrollmagic/uncompressed/ScrollMagic.js', array('jquery'), '20160412', true );
+	// wp_enqueue_script( 'twentysixteen-sm-scrollmagicIdicators', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery'), '20160412', true );
+	// wp_enqueue_script( 'twentysixteen-sm-jscarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '20160412', true );
+	// wp_enqueue_script( 'twentysixteen-sm-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20160412', true );
+
+
+	// <script src="bootstrap.min.js"></script>
+	// <script type="text/javascript" src="js/greensock/TweenMax.min.js"></script>
+	// <script type="text/javascript" src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+	// <script type="text/javascript" src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	// <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	// <script src="js/owl.carousel.min.js"></script>
+	// <script src="js/scripts.js"></script>
 
 	// Load the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'twentysixteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentysixteen-style' ), '20160412' );
@@ -252,3 +281,18 @@ add_action( 'wp_enqueue_scripts', 'twentysixteen_scripts' );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+// blog
+function twentysixteen_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'twentysixteen' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'twentysixteen_widgets_init' );
