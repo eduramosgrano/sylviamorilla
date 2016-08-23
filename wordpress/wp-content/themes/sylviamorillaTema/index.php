@@ -19,15 +19,15 @@ get_header(); ?>
 		<div class="col-md-12">
 
 			<div class="chamada1 row">
-				<div class="col col-xs-12 col-md-4 col-md-offset-2">
-					<span></span><h1 class="i1"><?php echo get_theme_mod('publico_texto1'); ?></h1>
+				<div class="col col-xs-12 col-sm-4 col-sm-offset-2">
+					<span class="hidden-xs"></span><h1 class="i1"><?php echo get_theme_mod('publico_texto1'); ?></h1>
 					<h1 class="i2"><?php echo get_theme_mod('publico_texto2'); ?></h1>
 					<h1 class="i3"><?php echo get_theme_mod('publico_texto3'); ?></h1>
 				</div>
 			</div>
 
 			<div class="foto row">
-				<div class="col-md-7 col-md-offset-5">
+				<div class="col-sm-7 col-sm-offset-5">
 					<span class=top></span>
 					<span class=bottom></span>
 					<span class=left></span>

@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+$(document).ready(function(){
   // navegator
   // // position
   var navegator       = $('.navegator'),
@@ -140,7 +140,6 @@ jQuery(document).ready(function($) {
 
   // END Slider-home
 
-
   // Publico
   // init controller
   // // Foto
@@ -156,26 +155,25 @@ jQuery(document).ready(function($) {
                 .to(".publico .foto span.left ", 1, {top:0})
                 .to(".publico .foto span.right ", 1, {bottom:0})
                 .to(".foto .img.img1", 1, {ease:Power2.easeInOut, opacity:1})
-                .to(".publico .foto .img1", 10, {"background-size":"100%"})
-                .to(".foto .img.img1",1, {ease:Power2.easeInOut, opacity:0})
-                .to(".chamada1", 1, {ease:Power1.easeOut, y:"8%"})
+                //.to(".publico .foto .img1", 10, {"background-size":"100%"})
+                .to(".foto .img.img1",1, {ease:Power2.easeInOut, opacity:0},"+=10")
+                //.to(".chamada1", 1, {ease:Power1.easeOut, y:"8%"})
                 .to(".chamada1 h1.i1",1, { ease:Power2.easeInOut, opacity:0, x:0})
                 .to(".chamada1 h1.i2",1, { ease:Power2.easeInOut, opacity:1, x:10})
                 .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:1})
-                .to(".publico .foto .img2", 10, {"background-size":"100%"})
-                .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:0})
-                .to(".chamada1", 1, {ease:Power2.easeInOut, y:"15%"})
+                //.to(".publico .foto .img2", 10, {"background-size":"100%"})
+                .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:0},"+=10")
+                //.to(".chamada1", 1, {ease:Power2.easeInOut, y:"15%"})
                 .to(".chamada1 h1.i2",1, {ease:Power2.easeInOut, opacity:0, x:0})
                 .to(".chamada1 h1.i3",1, {ease:Power2.easeInOut, opacity:1, x:10})
                 .to(".foto .img.img3",1, {ease:Power2.easeInOut, opacity:1})
-                .to(".publico .foto .img3", 10, {"background-size":"100%"})
                 .to(".publico .foto span.top",1, {ease:Power2.easeInOut, opacity:0},"+=10");
 
 
   // create a scene
   new ScrollMagic.Scene({
           triggerElement: ".publico",
-          duration: 4000,    // the scene should last for a scroll distance of 100px
+          duration: 2000,    // the scene should last for a scroll distance of 100px
           //offset: 50        // start this scene after scrolling for 50px
       })
       //.setClassToggle(".publico", "visible")
@@ -195,18 +193,18 @@ jQuery(document).ready(function($) {
                 .to(".servicos .foto span.left ", 1, {top:0})
                 .to(".servicos .foto span.right ", 1, {bottom:0})
                 .to(".servicos .chamada .frase1", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img1", 1, {opacity:1},"+=5")
-                .to(".servicos .foto .img1", 10, {"background-size":"100% "})
-                .to(".servicos .chamada .frase1", 0.5, {opacity:0})
+                .to(".servicos .foto .img1", 1, {opacity:1})
+                //.to(".servicos .foto .img1", 10, {"background-size":"100% "})
+                .to(".servicos .chamada .frase1", 0.5, {opacity:0},"+=10")
                 .to(".servicos .foto .img1", 1, {opacity:0})
                 .to(".servicos .chamada .frase2", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img2", 1, {opacity:1},"+=5")
-                .to(".servicos .foto .img2", 10, {"background-size":"100%"})
-                .to(".servicos .chamada .frase2", 0.5, {opacity:0})
+                .to(".servicos .foto .img2", 1, {opacity:1})
+                //.to(".servicos .foto .img2", 10, {"background-size":"100%"})
+                .to(".servicos .chamada .frase2", 0.5, {opacity:0},"+=10")
                 .to(".servicos .foto .img2", 1, {opacity:0})
                 .to(".servicos .chamada .frase3", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img3", 1, {opacity:1},"+=5")
-                .to(".servicos .foto .img3", 10, {"background-size":"100%"})
+                .to(".servicos .foto .img3", 1, {opacity:1})
+                //.to(".servicos .foto .img3", 10, {"background-size":"100%"})
                 .to(".servicos .foto span.top", 1, {opacity:0},"+=10");
 
 

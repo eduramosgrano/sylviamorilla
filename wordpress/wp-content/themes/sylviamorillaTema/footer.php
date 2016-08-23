@@ -21,24 +21,8 @@
 			</div>
 		</div>
 
-		<form class="form-horizontal">
-			<div class="form-group">
-				<div class="col-md-12">
-					<input type="text" class="form-control nome" id="inputPassword3" placeholder="Seu nome">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-12">
-					<input type="text" class="form-control email" id="inputPassword3" placeholder="Seu email">
-				</div>
-			</div>
-			<textarea class="form-control col-md-12" rows="3"></textarea>
-				<div class="form-group">
-					<div class="col-md-12">
-						<button type="submit" class="btn btn-info col-md-12" data-nome="enviar"><span></span>enviar<span></span></button>
-					</div>
-				</div>
-		</form>
+		<?php echo do_shortcode( '[contact-form-7 id="64" title="Contato"]' );
+ ?>
 	</div>
 </div>
 
@@ -67,14 +51,14 @@
 
  <!-- Preloader -->
  <script type="text/javascript">
- 	//<![CDATA[
- 		$(window).load(function() { // makes sure the whole site is loaded
- 			$('#status').fadeOut(); // will first fade out the loading animation
- 			$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
- 			$('body').delay(350).css({'overflow':'visible'});
- 		})
- 	//]]>
- </script> 
+		 //<![CDATA[
+				 $(window).load(function() { // makes sure the whole site is loaded
+						 $('#status').fadeOut(); // will first fade out the loading animation
+						 $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+						 $('body').delay(350).css({'overflow':'visible'});
+				 })
+		 //]]>
+ </script>
 
 <?php wp_footer(); ?>
 </body>

@@ -22,8 +22,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<!-- Preloader -->
 	<div id="preloader">
-		<div id="status">&nbsp;</div>
+			<div id="status">&nbsp;</div>
 	</div>
 
 	<?php
@@ -151,7 +152,7 @@
 		 	<div class="conteudo">
 		 		<div class="lista">
 		 			<ul>
-		 				<li><h1><a href="#sobre"><span></span>Sobre<span></span></a></h1></li>
+		 				<li><h1><a href="http://www.sylviamorilla.com.br#sobre"><span></span>Sobre<span></span></a></h1></li>
 		 				<li><h1><a href="portfolio"><span></span>Portfólio<span></span></a></h1></li>
 		 				<li><h1><a href="blog"><span></span>Blog<span></span></a></h1></li>
 		 				<li><h1><a href="#contato"><span></span>Contato<span></span></a></h1></li>
