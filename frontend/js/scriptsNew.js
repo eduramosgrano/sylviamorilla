@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function($) {
   // navegator
   // // position
   var navegator       = $('.navegator'),
@@ -115,116 +115,16 @@ $(document).ready(function(){
 		}
 	});
 
+// END navegator
 
 
 
 
-  // END navegator
-
-  // Slider-home
-  $(".carousel").owlCarousel({
-    items: 1,
-    autoplay:true,
-    autoplayTimeout:10000,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn'
-    //autoplayHoverPause:true
-  })
-
-  // init controller
-  var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-  // // paralax
-  new ScrollMagic.Scene({triggerElement: "#slider-home"})
-					.setTween("#slider-home > .carousel", {y: "100%", ease: Linear.easeNone})
-					.addTo(controller);
-
-  // END Slider-home
-
-  // Publico
-  // init controller
-  // // Foto
-  var ctrlPublico = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "0.2"}});
-
-  var tlChamada = new TimelineMax({});
-      tlChamada
-                .to(".chamada1 span", 1, {height:120})
-                .to(".chamada1 span", 1, {height:120})
-                .to(".chamada1 h1.i1", 1, {ease:Power2.easeInOut, opacity:1, x:10})
-                .to(".publico .foto span.top ", 1, {left:0})
-                .to(".publico .foto span.bottom ", 1, {right:0})
-                .to(".publico .foto span.left ", 1, {top:0})
-                .to(".publico .foto span.right ", 1, {bottom:0})
-                .to(".foto .img.img1", 1, {ease:Power2.easeInOut, opacity:1})
-                //.to(".publico .foto .img1", 10, {"background-size":"100%"})
-                .to(".foto .img.img1",1, {ease:Power2.easeInOut, opacity:0},"+=10")
-                //.to(".chamada1", 1, {ease:Power1.easeOut, y:"8%"})
-                .to(".chamada1 h1.i1",1, { ease:Power2.easeInOut, opacity:0, x:0})
-                .to(".chamada1 h1.i2",1, { ease:Power2.easeInOut, opacity:1, x:10})
-                .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:1})
-                //.to(".publico .foto .img2", 10, {"background-size":"100%"})
-                .to(".foto .img.img2",1, {ease:Power2.easeInOut, opacity:0},"+=10")
-                //.to(".chamada1", 1, {ease:Power2.easeInOut, y:"15%"})
-                .to(".chamada1 h1.i2",1, {ease:Power2.easeInOut, opacity:0, x:0})
-                .to(".chamada1 h1.i3",1, {ease:Power2.easeInOut, opacity:1, x:10})
-                .to(".foto .img.img3",1, {ease:Power2.easeInOut, opacity:1})
-                .to(".publico .foto span.top",1, {ease:Power2.easeInOut, opacity:0},"+=10");
-
-
-  // create a scene
-  new ScrollMagic.Scene({
-          triggerElement: ".publico",
-          duration: 2000,    // the scene should last for a scroll distance of 100px
-          //offset: 50        // start this scene after scrolling for 50px
-      })
-      //.setClassToggle(".publico", "visible")
-      .setPin(".publico") // pins the element for the the scene's duration
-      .setTween(tlChamada)
-      .addTo(ctrlPublico); // assign the scene to the controller
-
-  // Serviços
-  // init controller
-  // // Foto
-  var ctrlServicos = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "0.2"}});
-
-  var tlServicos = new TimelineMax({});
-      tlServicos
-                .to(".servicos .foto span.top ", 1, {left:0})
-                .to(".servicos .foto span.bottom ", 1, {right:0})
-                .to(".servicos .foto span.left ", 1, {top:0})
-                .to(".servicos .foto span.right ", 1, {bottom:0})
-                .to(".servicos .chamada .frase1", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img1", 1, {opacity:1})
-                //.to(".servicos .foto .img1", 10, {"background-size":"100% "})
-                .to(".servicos .chamada .frase1", 0.5, {opacity:0},"+=10")
-                .to(".servicos .foto .img1", 1, {opacity:0})
-                .to(".servicos .chamada .frase2", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img2", 1, {opacity:1})
-                //.to(".servicos .foto .img2", 10, {"background-size":"100%"})
-                .to(".servicos .chamada .frase2", 0.5, {opacity:0},"+=10")
-                .to(".servicos .foto .img2", 1, {opacity:0})
-                .to(".servicos .chamada .frase3", 0.5, {opacity:1,y:10})
-                .to(".servicos .foto .img3", 1, {opacity:1})
-                //.to(".servicos .foto .img3", 10, {"background-size":"100%"})
-                .to(".servicos .foto span.top", 1, {opacity:0},"+=10");
 
 
 
-                // create a scene
-                new ScrollMagic.Scene({
-                        triggerElement: ".servicos",
-                        duration: 3000,    // the scene should last for a scroll distance of 100px
-                        //offset: 50        // start this scene after scrolling for 50px
-                    })
-                    //.setClassToggle(".publico", "visible")
-                    //.addIndicators()
-                    .setPin(".servicos") // pins the element for the the scene's duration
-                    .setTween(tlServicos)
-                    .addTo(ctrlServicos); // assign the scene to the controller
 
-    // END Serviços
-
-
-    // SOBRE
+// SOBRE
 
     function pathPrepare ($el) {
   		var $lineLength = $el[0].getTotalLength();

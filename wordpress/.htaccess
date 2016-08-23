@@ -1,3 +1,6 @@
+AddHandler php53-script .php
+suPHP_ConfigPath /home/curtaavidaviagens/
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
